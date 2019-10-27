@@ -9,113 +9,115 @@
         <xs:element name="request">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="operationEntity">
+              <xs:element name="operationEntity" minOccurs="1"  maxOccurs="1">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="client">
+                    <xs:element name="client" minOccurs="1"  maxOccurs="1">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element type="xs:string" name="clientExtId"/>
-                          <xs:element type="xs:string" name="clientIdSys"/>
-                          <xs:element type="xs:string" name="clientTypeEnum"/>
-                          <xs:element type="xs:string" name="icIssueAutority"/>
-                          <xs:element type="xs:string" name="icIssueDate"/>
-                          <xs:element type="xs:string" name="icNum"/>
-                          <xs:element type="xs:string" name="icSeries"/>
-                          <xs:element type="xs:string" name="identityCardTypeId"/>
-                          <xs:element type="xs:string" name="personFirstName"/>
-                          <xs:element type="xs:string" name="personPatronymic"/>
-                          <xs:element type="xs:string" name="personSurname"/>
+                          <xs:element type="xs:string" name="clientExtId" minOccurs="0" maxOccurs="1"/>
+                          <xs:element type="xs:string" name="clientIdSys" minOccurs="1" maxOccurs="1"/>
+                          <xs:element type="xs:string" name="clientTypeEnum" minOccurs="1" maxOccurs="1"/>
+						  <xs:element type="xs:string" name="inn" minOccurs="0" maxOccurs="1"/>
+						  <xs:element type="xs:string" name="kpp" minOccurs="0" maxOccurs="1"/>
+                          <xs:element type="xs:string" name="icIssueAutority" minOccurs="0" maxOccurs="1"/>
+                          <xs:element type="xs:string" name="icIssueDate" minOccurs="0" maxOccurs="1"/>
+                          <xs:element type="xs:string" name="icNum" minOccurs="0" maxOccurs="1"/>
+                          <xs:element type="xs:string" name="icSeries" minOccurs="0" maxOccurs="1"/>
+                          <xs:element type="xs:string" name="identityCardTypeId" minOccurs="0" maxOccurs="1"/>
+                          <xs:element type="xs:string" name="personFirstName" minOccurs="0" maxOccurs="1"/>
+                          <xs:element type="xs:string" name="personPatronymic" minOccurs="0" maxOccurs="1"/>
+                          <xs:element type="xs:string" name="personSurname" minOccurs="0" maxOccurs="1"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element type="xs:string" name="controlEmpUserLogin"/>
-                    <xs:element type="xs:string" name="deptCode"/>
-                    <xs:element name="documents">
+                    <xs:element type="xs:string" name="controlEmpUserLogin" minOccurs="0" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="deptCode" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="documents" minOccurs="1">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="cashSymbols">
+                          <xs:element name="cashSymbols" minOccurs="0" maxOccurs="1">
                             <xs:complexType>
                               <xs:sequence>
-                                <xs:element type="xs:int" name="cashSymbolCode"/>
-								<xs:element type="xs:int" name="side"/>
-                                <xs:element name="summa">
+                                <xs:element type="xs:int" name="cashSymbolCode" minOccurs="1"/>
+								<xs:element type="xs:int" name="side" minOccurs="0" maxOccurs="1"/>
+                                <xs:element name="summa" minOccurs="1" maxOccurs="1">
                                   <xs:complexType>
                                     <xs:sequence>
-                                      <xs:element type="xs:string" name="currency"/>
-                                      <xs:element type="xs:decimal" name="summa"/>
+                                      <xs:element type="xs:string" name="currency" minOccurs="1"/>
+                                      <xs:element type="xs:decimal" name="summa" minOccurs="1"/>
                                     </xs:sequence>
                                   </xs:complexType>
                                 </xs:element>
                               </xs:sequence>
                             </xs:complexType>
                           </xs:element>
-                          <xs:element name="creditAccountEntity">
+                          <xs:element name="creditAccountEntity" minOccurs="0" maxOccurs="1">
                             <xs:complexType>
                               <xs:sequence>
-                                <xs:element type="xs:string" name="accountNum"/>
-                                <xs:element type="xs:string" name="deptCode"/>
-                                <xs:element type="xs:string" name="accountIdSys"/>
+                                <xs:element type="xs:string" name="accountNum" minOccurs="1" maxOccurs="1"/>
+                                <xs:element type="xs:string" name="deptCode" minOccurs="0" maxOccurs="1"/>
+                                <xs:element type="xs:string" name="accountIdSys" minOccurs="0" maxOccurs="1"/>
                               </xs:sequence>
                             </xs:complexType>
                           </xs:element>
-                          <xs:element name="creditSumma">
+                          <xs:element name="creditSumma" minOccurs="1" maxOccurs="1">
                             <xs:complexType>
                               <xs:sequence>
-                                <xs:element type="xs:string" name="currency"/>
-                                <xs:element type="xs:decimal" name="summa"/>
+                                <xs:element type="xs:string" name="currency" minOccurs="1" maxOccurs="1"/>
+                                <xs:element type="xs:decimal" name="summa" minOccurs="1" maxOccurs="1"/>
                               </xs:sequence>
                             </xs:complexType>
                           </xs:element>
-                          <xs:element name="debitAccountEntity">
+                          <xs:element name="debitAccountEntity" minOccurs="0" maxOccurs="1">
                             <xs:complexType>
                               <xs:sequence>
-                                <xs:element type="xs:string" name="accountNum"/>
-                                <xs:element type="xs:string" name="deptCode"/>
-                                <xs:element type="xs:string" name="accountIdSys"/>
+                                <xs:element type="xs:string" name="accountNum" minOccurs="1" maxOccurs="1"/>
+                                <xs:element type="xs:string" name="deptCode" minOccurs="0" maxOccurs="1"/>
+                                <xs:element type="xs:string" name="accountIdSys" minOccurs="0" maxOccurs="1"/>
                               </xs:sequence>
                             </xs:complexType>
                           </xs:element>
-                          <xs:element name="debitSumma">
+                          <xs:element name="debitSumma" minOccurs="1" maxOccurs="1">
                             <xs:complexType>
                               <xs:sequence>
-                                <xs:element type="xs:string" name="currency"/>
-                                <xs:element type="xs:decimal" name="summa"/>
+                                <xs:element type="xs:string" name="currency" minOccurs="1" maxOccurs="1"/>
+                                <xs:element type="xs:decimal" name="summa" minOccurs="1" maxOccurs="1"/>
                               </xs:sequence>
                             </xs:complexType>
                           </xs:element>
-                          <xs:element type="xs:string" name="description"/>
-                          <xs:element type="xs:int" name="docNumber"/>
+                          <xs:element type="xs:string" name="description" minOccurs="1" maxOccurs="1"/>
+                          <xs:element type="xs:int" name="docNumber" minOccurs="1" maxOccurs="1"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element type="xs:string" name="idSys"/>
-                    <xs:element type="xs:string" name="login"/>
-                    <xs:element type="xs:string" name="operJournalExtId"/>
-                    <xs:element type="xs:string" name="operationCode"/>
-                    <xs:element type="xs:dateTime" name="operationRegDate"/>
-                    <xs:element name="proxyClient">
+                    <xs:element type="xs:string" name="idSys" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="login" minOccurs="0" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="operJournalExtId" minOccurs="0" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="operationCode" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:dateTime" name="operationRegDate" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="proxyClient" minOccurs="0" maxOccurs="1">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element type="xs:string" name="clientTypeEnum"/>
-                          <xs:element type="xs:string" name="icIssueAutority"/>
-                          <xs:element type="xs:string" name="icIssueDate"/>
-                          <xs:element type="xs:string" name="icNum"/>
-                          <xs:element type="xs:string" name="icSeries"/>
-                          <xs:element type="xs:string" name="identityCardTypeId"/>
-                          <xs:element type="xs:string" name="personFirstName"/>
-                          <xs:element type="xs:string" name="personPatronymic"/>
-                          <xs:element type="xs:string" name="personSurname"/>
+                          <xs:element type="xs:string" name="clientTypeEnum" minOccurs="1" maxOccurs="1"/>
+                          <xs:element type="xs:string" name="icIssueAutority" minOccurs="0" maxOccurs="1"/>
+                          <xs:element type="xs:string" name="icIssueDate" minOccurs="0" maxOccurs="1"/>
+                          <xs:element type="xs:string" name="icNum" minOccurs="0" maxOccurs="1"/>
+                          <xs:element type="xs:string" name="icSeries" minOccurs="0" maxOccurs="1"/>
+                          <xs:element type="xs:string" name="identityCardTypeId" minOccurs="0" maxOccurs="1"/>
+                          <xs:element type="xs:string" name="personFirstName" minOccurs="0" maxOccurs="1"/>
+                          <xs:element type="xs:string" name="personPatronymic" minOccurs="0" maxOccurs="1"/>
+                          <xs:element type="xs:string" name="personSurname" minOccurs="0" maxOccurs="1"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="requestInfo">
+              <xs:element name="requestInfo" minOccurs="1" maxOccurs="1">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element type="xs:string" name="messageId"/>
+                    <xs:element type="xs:string" name="messageId" minOccurs="1" maxOccurs="1"/>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
@@ -131,20 +133,20 @@
         <xs:element name="return">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="operationActionResultEntity">
+              <xs:element name="operationActionResultEntity" minOccurs="1" maxOccurs="1">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element type="xs:string" name="errorCode"/>
-                    <xs:element type="xs:string" name="errorDetails"/>
-                    <xs:element type="xs:string" name="errorMessage"/>
-                    <xs:element type="xs:string" name="operJournalId"/>
+                    <xs:element type="xs:string" name="errorCode" minOccurs="0" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="errorDetails" minOccurs="0" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="errorMessage" minOccurs="0" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="operJournalId" minOccurs="0" maxOccurs="1"/>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="responseInfo">
+              <xs:element name="responseInfo" minOccurs="1" maxOccurs="1">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element type="xs:string" name="correlationId"/>
+                    <xs:element type="xs:string" name="correlationId" minOccurs="1" maxOccurs="1"/>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
