@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+		   xmlns:tns="http://www.vtb24.ru/ApplicationObjectLibrary/MBANK/Requesters/CashOperationMBANKReqA/V1/CreateCashOperation_Request"
+           targetNamespace="http://www.vtb24.ru/ApplicationObjectLibrary/MBANK/Requesters/CashOperationMBANKReqA/V1/CreateCashOperation_Request" 
+           elementFormDefault="qualified">
+  <xs:element name="createRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="request">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="operationEntity">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="client">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="clientExtId"/>
+                          <xs:element type="xs:string" name="clientIdSys"/>
+                          <xs:element type="xs:string" name="clientTypeEnum"/>
+                          <xs:element type="xs:string" name="icIssueAutority"/>
+                          <xs:element type="xs:string" name="icIssueDate"/>
+                          <xs:element type="xs:string" name="icNum"/>
+                          <xs:element type="xs:string" name="icSeries"/>
+                          <xs:element type="xs:string" name="identityCardTypeId"/>
+                          <xs:element type="xs:string" name="personFirstName"/>
+                          <xs:element type="xs:string" name="personPatronymic"/>
+                          <xs:element type="xs:string" name="personSurname"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="controlEmpUserLogin"/>
+                    <xs:element type="xs:string" name="deptCode"/>
+                    <xs:element name="documents">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="cashSymbols">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:int" name="cashSymbolCode"/>
+								<xs:element type="xs:int" name="side"/>
+                                <xs:element name="summa">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:string" name="currency"/>
+                                      <xs:element type="xs:decimal" name="summa"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="creditAccountEntity">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="accountNum"/>
+                                <xs:element type="xs:string" name="deptCode"/>
+                                <xs:element type="xs:string" name="accountIdSys"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="creditSumma">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="currency"/>
+                                <xs:element type="xs:decimal" name="summa"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="debitAccountEntity">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="accountNum"/>
+                                <xs:element type="xs:string" name="deptCode"/>
+                                <xs:element type="xs:string" name="accountIdSys"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="debitSumma">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="currency"/>
+                                <xs:element type="xs:decimal" name="summa"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element type="xs:string" name="description"/>
+                          <xs:element type="xs:int" name="docNumber"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="idSys"/>
+                    <xs:element type="xs:string" name="login"/>
+                    <xs:element type="xs:string" name="operJournalExtId"/>
+                    <xs:element type="xs:string" name="operationCode"/>
+                    <xs:element type="xs:dateTime" name="operationRegDate"/>
+                    <xs:element name="proxyClient">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="clientTypeEnum"/>
+                          <xs:element type="xs:string" name="icIssueAutority"/>
+                          <xs:element type="xs:string" name="icIssueDate"/>
+                          <xs:element type="xs:string" name="icNum"/>
+                          <xs:element type="xs:string" name="icSeries"/>
+                          <xs:element type="xs:string" name="identityCardTypeId"/>
+                          <xs:element type="xs:string" name="personFirstName"/>
+                          <xs:element type="xs:string" name="personPatronymic"/>
+                          <xs:element type="xs:string" name="personSurname"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="requestInfo">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="messageId"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="return">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="operationActionResultEntity">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="errorCode"/>
+                    <xs:element type="xs:string" name="errorDetails"/>
+                    <xs:element type="xs:string" name="errorMessage"/>
+                    <xs:element type="xs:string" name="operJournalId"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="responseInfo">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="correlationId"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
